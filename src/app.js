@@ -4,6 +4,8 @@ const hbs     = require('hbs')
 const geocode = require('./utils/geocode')
 const forcast = require('./utils/forcast')
 
+const port =process.env.PORT || 3000
+
 const app =express()
 
 //Define path for express config 
@@ -98,6 +100,6 @@ app.get('*',(req,res) =>{
         errorMsg : 'Page not found'
     })
 })
-app.listen(3000, ()=>{
-    console.log('Server is up and running on port 3000')
+app.listen(port, ()=>{
+    console.log('Server is up and running on port ' +port)
 })
